@@ -1,5 +1,6 @@
 // ********************************API***********************************
-const port = require("../server/api/server");
+const { post } = require("../server/api/controllers/posts");
+const port = require("../server/api/index");
 
 async function getPost(id) {
     try {
@@ -31,8 +32,29 @@ async function sendPost(e) {
 // **********************************************************************
 // ******************************LAYOUT**********************************
 
-const content = document.getElementById("content");
+const message = document.getElementById("message");
+const btn = document.getElementById('btn')
 
-function updateContent() {
-    content.innerHTML = ''
+btn.addEventListener('click', submitPost)
+
+async function submitPost(e){
+    e.preventDefault();
+    const postData = {
+        username: e.target.username.value,
+        title: e.target.title.value,
+        main: e.target.main.value
+        }
+
+    const options = {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(postData)
+        }
+
+    fetch(`http://localhost:${post}/posts/`, options)
+        .then(r => r.json())
+        .then(d => console.log(d));
+
+
+
 }

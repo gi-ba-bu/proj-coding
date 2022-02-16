@@ -11,7 +11,19 @@
 </head>
 <body>
     <h1>What's On Your Mind?</h1>
-    <div id="content"></div>
+    <form id="new-post-form">
+        <label for="username">name</label>
+        <input type="text" id="username" />
+
+        <label for="title">Title</label>
+        <input type="text" id="title" />
+
+        <label for="main">Message</label>
+        <input type="textarea" id="main" />
+
+        <input type="submit" id="btn" value="Post Thought">
+    </form>
+    <div id="message"></div>
     
 </body>
 </html>
