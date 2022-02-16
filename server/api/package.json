@@ -1,10 +1,10 @@
 {
-  "name": "server-postgresql",
+  "name": "code-challenge",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon --legacy-watch index.js"
   },
   "keywords": [],
   "author": "",

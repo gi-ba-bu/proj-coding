@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's On Your Mind?</title>
+    <script defer src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>What's On Your Mind?</h1>
+    <div id="content">
+
+        <form id="new-post-form">
+            <label for="Username"> How shall we call you?</label>
+            <input type="text" id="username" />
+            
+            <label for="Title"> Title</label>
+            <input type="text" id="title" />
+
+            <label for="Main"> Your message</label>
+            <input type="text" id="main" />
+
+            <input type="submit" value="Add post" id = "sbmbttn">
+        </form>
+    </div>
+    <div id = "post" style = "display: none">
+         <p>Title: <span id="post-content2"> </span> </p>
+         <p>Message: <span id="post-content3"> </span> </p>
+         <p>Author: <span id="post-content1"> </span> </p>
+    </div>
+    
+</body> 
+</html>
