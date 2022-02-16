@@ -1,6 +1,11 @@
 // ********************************API***********************************
-const port = require("../server/api/server");
+// const port = require("../server/api/server"); // there seem to be no port variable in the specified path/file
+ 
+let port = 3000;
 
+// no index 
+
+// show 
 async function getPost(id) {
     try {
         const resp = await fetch(`http://localhost:${port}/posts/${id}`)
@@ -11,6 +16,7 @@ async function getPost(id) {
     }
 };
 
+// create 
 async function sendPost(e) {
     e.preventDefault();
     try {
@@ -22,7 +28,7 @@ async function sendPost(e) {
 
         const resp = await fetch(`http://localhost:${port}/posts/`, options);
         const data = await resp.json();
-        wondow.location.hash = `#${data}`
+        window.location.hash = `#${data}`
     } catch (err) {
         console.log(err)
     }
@@ -31,6 +37,7 @@ async function sendPost(e) {
 // **********************************************************************
 // ******************************LAYOUT**********************************
 
+// Event listener
 const content = document.getElementById("content");
 
 function updateContent() {
