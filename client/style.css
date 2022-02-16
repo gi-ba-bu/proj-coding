@@ -4,7 +4,7 @@ html, body {
   }
   
   body {
-    background-image: url('https://source.unsplash.com/ppY9ZjLjB0o/1600x900');
+    background-image: url('https://source.unsplash.com/xe-ss5Tg2mo/1600x1600');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -32,4 +32,38 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+
+  #post {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    margin: 50px;
+    border-radius: 50px;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+  }
+
+  p {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 800;
+    font-size: 28px;
+  }
+
+  span {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+    font-size: 50px;
+  }
+
+  #username, #title, #main {
+    margin-top: 4px;
+    margin-bottom: 26px;
+  }
+
+  #sbmbttn {
+    margin: 15px;
   }

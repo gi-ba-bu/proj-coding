@@ -7,7 +7,10 @@
     <title>What's On Your Mind?</title>
     <script defer src="scripts.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>What's On Your Mind?</h1>
@@ -23,10 +26,14 @@
             <label for="Main"> Your message</label>
             <input type="text" id="main" />
 
-            <input type="submit" value="Add post">
+            <input type="submit" value="Add post" id = "sbmbttn">
         </form>
-        <p id="post-content"></p>
+    </div>
+    <div id = "post" style = "display: none">
+         <p>Title: <span id="post-content2"> </span> </p>
+         <p>Message: <span id="post-content3"> </span> </p>
+         <p>Author: <span id="post-content1"> </span> </p>
     </div>
     
-</body>
+</body> 
 </html>

@@ -15,29 +15,16 @@ async function getPost(id) {
     }
 };
 
-// // create 
-// async function sendPost(e) {
-//     e.preventDefault();
-//     try {
-//         const options = {
-//             method: 'POST',
-//             headers: { "Content-Type": "application/json" },
-//             body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
-//         }
 
-//         const resp = await fetch(`http://localhost:${port}/posts/`, options);
-//         const data = await resp.json();
-//         window.location.hash = `#${data}`
-//     } catch (err) {
-//         console.log(err)
-//     }
-// }
-
-// **********************************************************************
-// ******************************LAYOUT**********************************
+// create and show
 
 const btn = document.getElementById('new-post-form')
-
+const postContent1 = document.getElementById('post-content1');
+const postContent2 = document.getElementById('post-content2');
+const postContent3 = document.getElementById('post-content3');
+const contentDiv = document.getElementById('content');
+const postDiv = document.getElementById('post');
+const postTtl = document.querySelector('h1');
 
 btn.addEventListener('submit', submitPost)
 
@@ -69,14 +56,15 @@ async function submitPost(e){
 
 
 async function renderPost(id) { 
-    const postData = await getAPost(id) 
-    console.log(postData)
-    const postContent = document.getElementById('post-content');
-    postContent.textContent =  `Username:${postData.username}
-    Title: ${postData.title}
-    Post:${postData.main}
-    </div>`
-
+    contentDiv.style.display = "none";
+    postTtl.style.display = "none";
+    postDiv.style.display = "block";
+    const postData = await getAPost(id);
+    console.log(postData);
+    postContent1.textContent = `${postData.username}`;
+    postContent2.textContent = `${postData.title}`;
+    postContent3.textContent = `${postData.main}`;
+    
 }
 
 async function getAPost(id) {

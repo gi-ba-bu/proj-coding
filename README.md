@@ -1,52 +1,37 @@
-## Code of Conduct
+## Folder system
 
-* All work must include a README with the following elements:
+    ├── client  
+    └── server (this works containerized)                    
+        ├── /api           
+        ├── /db         
+        └── docker-compose.yaml
 
-    * Must have:
-        * Assignment title
-        * Installation & usage
-        * Changelog
-        * Bugs
-
-    * Could have:
-        * Wins & Challenges
-
-## Useful Tools
-
-* [Markdown Guide](https://guides.github.com/features/mastering-markdown/)
-
-## Example README
-
-Below is an example of what a README could look like.
-
-# Assignment 1
 
 ## Installation & Usage
 
 ### Installation
 
-* Clone or download the repo.
-* Open terminal and navigate to `fizzbuzz` folder.
-* Run `npm install` to install dependencies.
+* Clone the repo.
+* Open terminal and navigate to `server` folder.
+* Run `docker compose up` to initialize containers.
 
 ### Usage
 
-* Run `npm start` to launch server.
-* Run `npm test` to launch test suite.
+* Run `http-server` to launch the client on port 8080.
 
-# Routes
+# CONTENT
 
-### Routes
+## Server routes
+
 | **URL** | **HTTP Verb** |  **Action**|
 |------------|-------------|------------|
-| /thoughts/         | GET       | index  
-| /thoughts/new      | GET       | new   ??
-| /thoughts          | POST      | create   
-| /thoughts/:id      | GET       | show  
+| /posts/    | GET         | index  
+| /posts     | POST        | create   
+| /posts/:id | GET         | show  
 
-# Server
 
-## Posts
+
+## Posts database structure
 | id | title |  main | user_id|
 |----|-------|-------|-------    |
 |  1 |title1 | body1 | username1 |
@@ -57,25 +42,28 @@ Below is an example of what a README could look like.
 
 ## Changelog
 
-### index.html
+### client
 
-[x] Fixed filepath to correctly connect CSS to HTML file.
+[x] Removed filepaths to server side 
 
-### server.js
+[x] Add port nuber directly
 
-[x] Updated `fizzbuzz` funtion to accept an arguement.
+[x] Added favicon
+
+### server
+
+[x] Removed users table
 
 ## Bugs
 
-[] Function logs 15 as `fizz` when it should log `fizzbuzz`
+[] No route to retrieve messages on client side
 
 ## Wins & Challenges
 
 ### Wins
 
-* Managed to implement a loop.
-* Learned how to use modulus operator.
+* Create and display workflow works nicely!
 
 ### Challenges
 
-* Realised using return would not log all numbers up to the arguement number.
+* Update rendering webage based on URL. 
