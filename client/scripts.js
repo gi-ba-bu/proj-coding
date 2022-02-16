@@ -38,6 +38,7 @@ async function getPost(id) {
 
 const btn = document.getElementById('new-post-form')
 
+
 btn.addEventListener('submit', submitPost)
 
 async function submitPost(e){
@@ -59,8 +60,26 @@ async function submitPost(e){
         
     fetch(`http://localhost:${port}/posts/`, options)
         .then(r => r.json())
-        .then(d => console.log(d));
+        .then(d => d.id)
+        .then(renderPost)
+        .then(() => e.target.reset())
+        .catch(console.warn)
+
+}
 
 
+async function renderPost(id) { 
+    const postData = await getAPost(id) 
+    console.log(postData)
+    const postContent = document.getElementById('post-content');
+    postContent.textContent =  `Username:${postData.username}
+    Title: ${postData.title}
+    Post:${postData.main}
+    </div>`
 
+}
+
+async function getAPost(id) {
+    const postData = await getPost(id)
+    return postData;
 }
