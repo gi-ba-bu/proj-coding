@@ -1,6 +1,6 @@
 // ********************************API***********************************
-const { post } = require("../server/api/controllers/posts");
-const port = require("../server/api/index");
+// const { post } = require("../server/api/controllers/posts");
+const port = 3000;
 
 // no index 
 
@@ -38,7 +38,7 @@ async function getPost(id) {
 
 const btn = document.getElementById('new-post-form')
 
-btn.addEventListener('click', submitPost)
+btn.addEventListener('submit', submitPost)
 
 async function submitPost(e){
     e.preventDefault();
@@ -48,13 +48,16 @@ async function submitPost(e){
         main: e.target.main.value
         }
 
-    const options = {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(postData)
+        
+        const options = {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(postData)
         }
-
-    fetch(`http://localhost:${post}/posts/`, options)
+        
+        console.log(options.body)
+        
+    fetch(`http://localhost:${port}/posts/`, options)
         .then(r => r.json())
         .then(d => console.log(d));
 
