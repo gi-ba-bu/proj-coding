@@ -2,6 +2,9 @@
 const { post } = require("../server/api/controllers/posts");
 const port = require("../server/api/index");
 
+// no index 
+
+// show 
 async function getPost(id) {
     try {
         const resp = await fetch(`http://localhost:${port}/posts/${id}`)
@@ -12,28 +15,28 @@ async function getPost(id) {
     }
 };
 
-async function sendPost(e) {
-    e.preventDefault();
-    try {
-        const options = {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
-        }
+// // create 
+// async function sendPost(e) {
+//     e.preventDefault();
+//     try {
+//         const options = {
+//             method: 'POST',
+//             headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+//         }
 
-        const resp = await fetch(`http://localhost:${port}/posts/`, options);
-        const data = await resp.json();
-        wondow.location.hash = `#${data}`
-    } catch (err) {
-        console.log(err)
-    }
-}
+//         const resp = await fetch(`http://localhost:${port}/posts/`, options);
+//         const data = await resp.json();
+//         window.location.hash = `#${data}`
+//     } catch (err) {
+//         console.log(err)
+//     }
+// }
 
 // **********************************************************************
 // ******************************LAYOUT**********************************
 
-const message = document.getElementById("message");
-const btn = document.getElementById('btn')
+const btn = document.getElementById('new-post-form')
 
 btn.addEventListener('click', submitPost)
 
