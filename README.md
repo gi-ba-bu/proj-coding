@@ -47,18 +47,11 @@ Below is an example of what a README could look like.
 # Server
 
 ## Posts
-| id | title |  body | user_id|
-|----|-------|-------|------- |
-|  1 |title1 | body1 | 1      |
-|  2 |title2 | body2 | 1      |
-|  3 |title3 | body3 | 2      |
-
-
-## Users
-| id  | pseudonym |
-|-----|---------- |
-| 1   | name1     |
-| 2   | name2     |
+| id | title |  main | user_id|
+|----|-------|-------|-------    |
+|  1 |title1 | body1 | username1 |
+|  2 |title2 | body2 | username2 |
+|  3 |title3 | body3 | username3 |
 
 
 
